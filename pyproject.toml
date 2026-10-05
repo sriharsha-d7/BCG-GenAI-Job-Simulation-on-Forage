@@ -1,0 +1,20 @@
+[project]
+name = "fin-chatbot"
+version = "0.2.0"
+description = "A financial Q&A bot that answers only from SEC-verified data"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.1"]
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.40"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+fin-chatbot = "fin_chatbot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
